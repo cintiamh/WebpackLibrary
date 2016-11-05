@@ -228,3 +228,17 @@ dist/
   }
 }
 ```
+
+### Scripts in package.json
+
+Include these scripts in package.json:
+
+```
+"scripts": {
+    "build": "./node_modules/.bin/webpack --display-error-details && ./node_modules/.bin/webpack --prod",
+    "dev": "./node_modules/.bin/webpack-dev-server --port 3000 --devtool eval --progress --colors --hot --content-base dist",
+    "test": "node_modules/.bin/karma start karma.config.js",
+    "test:watch": "ynpm run test -- --watch",
+    "lint": "./node_modules/.bin/eslint . --ext .js"
+}
+```
